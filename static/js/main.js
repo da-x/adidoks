@@ -12,3 +12,5 @@ if (localStorage.getItem('theme') === 'dark' || (!localStorage.getItem('theme') 
   document.body.classList.add('dark');
   
 }
+
+document.body.classList.add('darkness-determined');

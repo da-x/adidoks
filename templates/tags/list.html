@@ -1,0 +1,29 @@
+{% extends "index.html" %}
+
+{% block content %}
+    <div class="wrap container" role="document">
+      <div class="content">
+	<div class="row justify-content-center">
+	  <div class="col-md-14 col-lg-12 col-xl-10">
+	    <article>
+	      <div class="page-header">
+		<h3>{{ terms | length }} tags in total</h3>
+	      </div>
+		<ul>
+		    {% for tag in terms %}
+		    <li>
+			<a href="{{ tag.permalink }}">
+			    #<span class="count">{{ tag.pages | length }}</span>
+			    -
+			    {{ tag.name }}
+			</a>
+		    </li>
+		    {% endfor %}
+		</ul>
+	    </article>
+	  </div>
+	</div>
+      </div>
+    </div>
+
+{% endblock content %}

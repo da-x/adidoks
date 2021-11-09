@@ -1,0 +1,25 @@
+{% extends "index.html" %}
+
+{% block content %}
+    <div class="wrap container" role="document">
+      <div class="content">
+	<div class="row justify-content-center">
+	  <div class="col-md-14 col-lg-12 col-xl-10">
+	    <article>
+	      <div class="page-header">
+              <h2>{{ term.name }}</h2>
+	      </div>
+	      <table>
+  	      {% for page in term.pages %}
+		<tr>
+		    <td width="130px">{{ page.date | date(format="%F") }}</td>
+		    <td class="taxonomy__item__title"><a href="{{ page.permalink }}">{{ page.title }}</td>
+		</tr>
+	      {% endfor %}
+	      </table>
+	    </article>
+	  </div>
+	</div>
+      </div>
+    </div>
+{% endblock content %}

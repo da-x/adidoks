@@ -1,0 +1,112 @@
+.mycode-block {
+  margin: 0.5em;
+  pre {
+    margin: 0px;
+    overflow: auto;
+  }
+  table {
+    width: 100%;
+    border: 0px 0px 0px 0px;
+    .codeTitle {
+      border-left: 0px;
+      border-right: 0px;
+      border-top: 0px;
+      border-bottom: 2px;
+      border-style: solid;
+      text-align: center;
+      padding: 6px;
+    }
+    .lineNumbers {
+      pre {
+        text-align: right;
+        padding: 0px;
+      }
+      border: 0px;
+      padding-top: 0px;
+      padding-left: 0px;
+      padding-right: 0px;
+      padding-bottom: 0px;
+    }
+    .lineNumbersDiv {
+      padding: 6px;
+      pre {
+        margin-top: 0px;
+      }
+    }
+    .sourceCode {
+      width: 100%;
+      border: 0px;
+      padding: 0px;
+
+      pre {
+	margin-top: 0px;
+        padding: 6px;
+      }
+    }
+    .sourceCodeWrap {
+      pre {
+        white-space: pre-wrap;
+      }
+    }
+  }
+  .codeBox {
+    margin: 1.2em;
+    padding: 0em;
+    border-radius: .25em;
+    border-top: 0px;
+    border-left: 0px;
+    border-right: 0px;
+    border-bottom: 0px;
+  }
+  font-size: 16p;
+}
+
+$dark-source-marker-background: #004488;
+$dark-code-title-background: $gray-800;
+$dark-code-title-border-color: $gray-900;
+$dark-line-number-background: $gray-900;
+$dark-code-box-shadow: rgba(0,0,0,.45);
+
+$light-source-marker-background: #ccffcc;
+$light-code-title-background: #ddffff;
+$light-code-title-border-color: #88dddd;
+$light-line-number-background: #dddddd;
+$light-code-box-shadow: rgba(0,0,0,.45);
+
+.mycode-block {
+    .sourceMarker {
+	background: $light-source-marker-background;
+    }
+    table {
+	.codeTitle {
+	    background: $light-code-title-background;
+	    border-color: $light-code-title-border-color;
+	}
+	.lineNumbers {
+	    background: $light-line-number-background;
+	}
+    }
+    .codeBox {
+	box-shadow: .1em .1em .5em $light-code-box-shadow;
+    }
+}
+
+body.dark {
+    .mycode-block {
+	.sourceMarker {
+	    background: $dark-source-marker-background;
+	}
+	table {
+	    .codeTitle {
+		background: $dark-code-title-background;
+		border-color: $dark-code-title-border-color;
+	    }
+	    .lineNumbers {
+		background: $dark-line-number-background;
+	    }
+	}
+	.codeBox {
+	    box-shadow: .1em .1em .5em $dark-code-box-shadow;
+	}
+    }
+}

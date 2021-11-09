@@ -33,21 +33,22 @@
 							<a class="nav-link" href="{{ get_url(path=val.url, trailing_slash=true) | safe }}">{{ val.name }}</a>
 						</li>
 					{% endfor %}
+
 				{% else %}
 				<li class="nav-item">
-					<a class="nav-link" href="{{ get_url(path="docs", trailing_slash=true) | safe }}">Docs</a>
+					<a class="nav-link" href="{{ get_url(path="pages", trailing_slash=true) | safe }}">Pages</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="{{ get_url(path="blog", trailing_slash=true) | safe }}">Blog</a>
+					<a class="nav-link" href="{{ get_url(path="posts", trailing_slash=true) | safe }}">Posts</a>
 				</li>
 				{% endif %}
 			</ul>
 			<div class="break order-6 d-md-none"></div>
 			{% if config.build_search_index %}
 				<form class="navbar-form flex-grow-1 order-7 order-md-3">
-					<input id="userinput" class="form-control is-search" type="search" placeholder="Search docs..."
-						aria-label="Search docs..." autocomplete="off">
-					<div id="suggestions" class="shadow bg-white rounded"></div>
+					<input id="userinput" class="form-control is-search" type="search" placeholder="Search pages..."
+						aria-label="Search pages..." autocomplete="off">
+					<div id="suggestions" class="rounded"></div>
 				</form>
 			{% endif %}
 		</div>

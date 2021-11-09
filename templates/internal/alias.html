@@ -1,0 +1,39 @@
+{%- import 'macros/head.html' as macros_head -%}
+{% import 'macros/math.html' as macros_math -%}
+{% import 'macros/header.html' as macros_header -%}
+{% import 'macros/footer.html' as macros_footer -%}
+{% import 'macros/javascript.html' as macros_js -%}
+{% import 'macros/page-publish-metadata.html' as macros_publish -%}
+{% import 'macros/section-navigation.html' as macros_section_nav -%}
+{% import 'macros/docs-sidebar.html' as macros_sidebar -%}
+{% import 'macros/docs-edit-page.html' as macros_edit_page -%}
+{% import 'macros/docs-navigation.html' as macros_navigation -%}
+{% import 'macros/docs-toc.html' as macros_toc -%}
+<!DOCTYPE html>
+<html lang="{{ config.extra.language_code | default(value="en-US") }}">
+<head>
+
+<meta charset="utf-8">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+{{ macros_head::resource() }}
+{{ macros_head::stylesheet() }}
+
+{{ macros_head::favicons() }}
+
+<link rel="canonical" href="{{ url | safe }}">
+<meta http-equiv="refresh" content="0; url={{ url | safe }}">
+
+<title>Redirect</title>
+
+</head>
+{% block body %}{% set page_class="home" %}{% endblock body %}
+<body class="{{ page_class }}">
+    <button id="mode" aria-label="Toggle mode">
+	<span class="toggle-dark"></span>
+	<span class="toggle-light"></span>
+    </button>
+    {{ macros_js::javascript() }}
+</body>
+</html>

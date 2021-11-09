@@ -11,6 +11,16 @@
   overflow: auto;
 }
 
+body:not(.dark) #suggestions {
+  @extend .bg-white;
+  @extend .shadow;
+}
+
+body.dark #suggestions {
+  background-color: $gray-800;
+  box-shadow: 0 0.5rem 1rem rgba(127, 127, 127, 0.15) !important;
+}
+
 #suggestions a {
   display: block;
   text-decoration: none;
@@ -51,6 +61,20 @@
 
 #suggestions span:nth-child(2) {
   color: $gray-700;
+}
+
+body.dark {
+    #suggestions a:hover {
+	background: $gray-700;
+    }
+
+    #suggestions span:first-child {
+	color: $white;
+    }
+
+    #suggestions span:nth-child(2) {
+	color: $gray-200;
+    }
 }
 
 @include media-breakpoint-up(sm) {

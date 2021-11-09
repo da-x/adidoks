@@ -331,3 +331,11 @@ body.dark .copy-status:active::after {
   display: block;
   color: $link-color-dark;
 }
+
+// If loading the JS still takes a split of a second, avoid flashing with a
+// white background and distrubing the user.
+@media (prefers-color-scheme: dark) {
+    body:not(.darkness-determined) {
+	background-color: $body-bg-dark;
+    }
+}

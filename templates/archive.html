@@ -1,0 +1,38 @@
+{% extends "section.html" %}
+
+{% block body %}
+  {% set page_class = "blog list" %}
+{% endblock body %}
+
+{% block header %}
+  {# This value is matched by the config.extra.menu.main->section #}
+  {% set current_section = "blog" %}
+  {{ macros_header::header(current_section=current_section)}}
+{% endblock header %}
+
+{% block content %}
+<div class="wrap container" role="document">
+  <div class="content">
+    <div class="row justify-content-center">
+      <div class="col-md-14 col-lg-12 col-xl-10">
+        <article>
+          <h1 class="text-center">{{ section.title }}</h1>
+	  {% set section = get_section(path="posts/_index.md") %}
+	  {% for year, posts in section.pages | group_by(attribute="year") %}
+	      <h2>{{ year }}</h2>
+
+	      <ul>
+	      {% for post in posts %}
+	          <li>
+		      <a href="{{ post.permalink }}">{{ post.title }}</a>,
+<small>{{ post.date | date(format=config.extra.timeformat | default(value="%b %e"), timezone=config.extra.timezone | default(value="America/New_York")) }}{% if post.taxonomies.authors and config.taxonomies %} by {% for author in post.taxonomies.authors %}{% if author_flag %} and {% endif %}<a class="stretched-link position-relative" href="{{ get_taxonomy_url(kind='authors', name=author) | safe }}">{{ author }}</a>{% set_global author_flag = true %}{% endfor %}{% endif %}&nbsp;&hyphen;&nbsp;<strong>{{ post.reading_time }}&nbsp;min read</strong></small>
+		  </li>
+	      {% endfor %}
+	      </ul>
+          {% endfor %}
+        </article>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock content %}

@@ -12,6 +12,19 @@
 <!DOCTYPE html>
 <html lang="{{ config.extra.language_code | default(value="en-US") }}">
 <head>
+
+{% if config.extra.google_analytics %}
+ <!-- Global site tag (gtag.js) - Google Analytics -->
+ <script async src="https://www.googletagmanager.com/gtag/js?id={{config.extra.google_analytics | safe}}"></script>
+ <script>
+   window.dataLayer = window.dataLayer || [];
+   function gtag(){dataLayer.push(arguments);}
+   gtag('js', new Date());
+
+    gtag('config', '{{config.extra.google_analytics | safe}}');
+ </script>
+{% endif %}
+
 <meta charset="utf-8">
 <meta http-equiv="x-ua-compatible" content="ie=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -30,6 +43,7 @@
 {% block math %}{{ macros_math::math() }}{% endblock math %}
 </head>
 {% block body %}{% set page_class="home" %}{% endblock body %}
+
 <body class="{{ page_class }}">
   {% block header %}
     {{ macros_header::header(current_section="/") }}
@@ -41,6 +55,6 @@
     {{ macros_footer::footer() }}
   {% endblock footer %}
 
-  {{ macros_js::javascript() }}  
+  {{ macros_js::javascript() }}
 </body>
 </html>

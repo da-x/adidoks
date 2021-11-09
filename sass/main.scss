@@ -29,5 +29,9 @@
 @import "layouts/posts";
 @import "layouts/sidebar";
 
+/* Syntax highlighting; */
+@import "syntaxtheme";
+@import "darksyntaxtheme";
+
 /* @import custom styles */
 @import "custom.scss";
