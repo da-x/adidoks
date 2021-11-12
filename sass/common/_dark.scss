@@ -31,6 +31,10 @@ body.dark a.text-body {
   color: $body-color-dark !important;
 }
 
+body.dark span.draft-link a {
+  color: $gray-600;
+}
+
 body.dark .btn-primary {
   @include button-variant($button-color-dark, $button-color-dark);
 

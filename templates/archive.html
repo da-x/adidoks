@@ -23,10 +23,21 @@
 
 	      <ul>
 	      {% for post in posts %}
+	          {% if post.title %}
+	            {% if post.draft %}
+		      <span class="draft-link">
+	            {% endif %}
 	          <li>
+	            {% if post.draft %}
+		      DRAFT:
+	            {% endif %}
 		      <a href="{{ post.permalink }}">{{ post.title }}</a>,
 <small>{{ post.date | date(format=config.extra.timeformat | default(value="%b %e"), timezone=config.extra.timezone | default(value="America/New_York")) }}{% if post.taxonomies.authors and config.taxonomies %} by {% for author in post.taxonomies.authors %}{% if author_flag %} and {% endif %}<a class="stretched-link position-relative" href="{{ get_taxonomy_url(kind='authors', name=author) | safe }}">{{ author }}</a>{% set_global author_flag = true %}{% endfor %}{% endif %}&nbsp;&hyphen;&nbsp;<strong>{{ post.reading_time }}&nbsp;min read</strong></small>
 		  </li>
+  	            {% if post.draft %}
+		      </span>
+	            {% endif %}
+	          {% endif %}
 	      {% endfor %}
 	      </ul>
           {% endfor %}
