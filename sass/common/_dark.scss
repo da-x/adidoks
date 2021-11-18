@@ -341,5 +341,9 @@ body.dark .copy-status:active::after {
 @media (prefers-color-scheme: dark) {
     body:not(.darkness-determined) {
 	background-color: $body-bg-dark;
+
+	.card {
+	    background-color: $body-bg-dark;
+	}
     }
 }
