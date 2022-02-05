@@ -91,6 +91,15 @@ $light-code-box-shadow: rgba(0,0,0,.45);
     }
 }
 
+.external-link-no-underline {
+    display: inline-block;
+    width: 5px;
+}
+
+.external-link-outer {
+    display: inline-block;
+}
+
 body.dark {
     .mycode-block {
 	.sourceMarker {
