@@ -100,7 +100,7 @@ $light-code-box-shadow: rgba(0,0,0,.45);
     display: inline-block;
 }
 
-body.dark {
+body.dark, body.code-theme-inverse:not(.dark) {
     .mycode-block {
 	.sourceMarker {
 	    background: $dark-source-marker-background;

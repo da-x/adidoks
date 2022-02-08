@@ -6,6 +6,9 @@
 #mode {
   margin-right: 1.25rem;
 }
+#code-mode {
+  margin-right: 1.25rem;
+}
 
 .btn-link:focus {
   outline: 0;
@@ -47,6 +50,38 @@ body.dark .toggle-light {
 }
 
 body.dark .toggle-dark {
+  display: none;
+}
+
+body:not(.dark) .code-toggle-dark {
+  display: block;
+}
+
+body:not(.dark) .code-toggle-light {
+  display: none;
+}
+
+body:not(.dark).code-theme-inverse .code-toggle-light {
+  display: block;
+}
+
+body:not(.dark).code-theme-inverse .code-toggle-dark {
+  display: none;
+}
+
+body.dark .code-toggle-light {
+  display: block;
+}
+
+body.dark .code-toggle-dark {
+  display: none;
+}
+
+body.dark.code-theme-inverse .code-toggle-dark {
+  display: block;
+}
+
+body.dark.code-theme-inverse .code-toggle-light {
   display: none;
 }
 
