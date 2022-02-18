@@ -24,3 +24,16 @@ if (localStorage.getItem('code-theme') === 'enabled')
 {
   document.body.classList.add('code-theme-inverse');
 }
+
+var copyLink = document.getElementById('aloni-copy-link');
+if (copyLink) {
+  function aloniCopylink() {
+    let url = document.location.href
+    navigator.clipboard.writeText(url).then(function() {
+    }, function() {
+    });
+  }
+
+  console.log(copyLink);
+  copyLink.onclick = aloniCopylink;
+}

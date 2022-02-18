@@ -73,6 +73,105 @@ $light-code-title-border-color: #88dddd;
 $light-line-number-background: #dddddd;
 $light-code-box-shadow: rgba(0,0,0,.45);
 
+:root {
+    --colorNeutral900: #1c1a33;
+    --colorNeutral800: #373e4d;
+    --colorNeutral700: #545b6d;
+    --colorNeutral600: #7d8699;
+    --colorNeutral200: #e5e6e8;
+    --colorNeutral100: #f7f8fa;
+    --colorTwitter: #1d9bf0;
+    --colorLinkedIn: #2867b2;
+    --borderRadiusSmall: 0.25rem;
+    --spacingXxsmall: 0.25rem;
+    --spacingXsmall: 0.5rem;
+    --roundedBarHeight: 4px;
+    --fontFamily: "Whitney SSm", sans-serif;
+    --fontFamilyMarketing: "Playfair Display", sans-serif;
+    --fontSizeNormal: 1rem;
+    --fontSizeXxsmall: 0.625rem;
+    --letterSpacingWide: 0.1em;
+}
+
+.SocialShare_socialIcons {
+    -webkit-align-items: center;
+    align-items: center;
+    all: unset;
+    display: -webkit-flex;
+    display: flex;
+    grid-gap: var(--spacingXxsmall);
+    gap: var(--spacingXxsmall);
+    list-style: none;
+    position: relative
+}
+
+.SocialShare_socialShareTitle {
+    color: var(--colorNeutral600);
+    font-size: var(--fontSizeXxsmall);
+    font-weight: var(--fontWeightMediumBold);
+    letter-spacing: var(--letterSpacingWide);
+    margin: 0;
+    margin-top: 2em;
+    margin-bottom: 1em;
+    text-decoration: none;
+    text-transform: uppercase
+}
+
+.SocialShare_socialIconButton {
+    --iconSize: var(--fontSizeNormal);
+    -webkit-align-items: center;
+    align-items: center;
+    border-radius: var(--borderRadiusSmall);
+    color: var(--colorNeutral600);
+    cursor: pointer;
+    display: -webkit-inline-flex;
+    display: inline-flex;
+    -webkit-justify-content: center;
+    justify-content: center;
+    padding: var(--spacingXsmall)
+}
+
+.SocialShare_socialIconButton>svg {
+    height: var(--iconSize);
+    width: var(--iconSize)
+}
+
+body:not(.dark) {
+    .SocialShare_socialIconButton:hover {
+	background-color: var(--colorNeutral100);
+	color: var(--socialIconColor)
+    }
+}
+
+body.dark {
+    .SocialShare_socialIconButton:hover {
+	background-color: var(--colorNeutral800);
+    }
+}
+
+.SocialShare_socialIconButton:active {
+    background-color: var(--colorNeutral200)
+}
+
+.footerIcons {
+    display: flex;
+    flex-direction: row;
+}
+
+.footerChild1 {
+    width: 50%;
+}
+
+.footerChild2 {
+    width: 50%;
+    vertical-align: center;
+    text-align: right;
+
+    .SocialShare_socialIcons {
+	float: right;
+    }
+}
+
 .mycode-block {
     .sourceMarker {
 	background: $light-source-marker-background;
